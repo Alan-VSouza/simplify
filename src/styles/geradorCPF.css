@@ -1,0 +1,315 @@
+/* Container e Card permanecem suaves e naturais */
+.cpf-generator-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #e4f5ec 0%, #f7f8fa 100%),
+    url("https://www.transparenttextures.com/patterns/leaf.png");
+  background-blend-mode: lighten;
+  background-size: cover, auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.cpf-generator-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.13), 0 1.5px 12px 0 #b7e4c7;
+  padding: 2.5rem 2rem;
+  max-width: 32rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.1rem;
+  color: #23402a;
+  backdrop-filter: blur(5px);
+  border: 1.5px solid #b7e4c7;
+}
+
+/* Título mantém o destaque natural */
+.cpf-generator-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px #e4f5ec;
+}
+
+/* Checkbox mantém o verde sutil */
+.cpf-generator-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.cpf-generator-checkbox input[type="checkbox"] {
+  margin: 0;
+  accent-color: #6bbf59;
+}
+.cpf-generator-checkbox label {
+  margin-left: 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+  word-break: break-word;
+  white-space: normal;
+  max-width: calc(100% - 2rem);
+  overflow-wrap: break-word;
+}
+
+/* Botões modernos: azul/lilás com efeito vidro e hover vibrante */
+.cpf-generator-btn,
+.cpf-copy-btn,
+.cpf-paste-btn,
+.cpf-validator-btn {
+  background: #002e1fec;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s, color 0.2s;
+  box-shadow: 0 4px 16px 0 rgba(44, 62, 80, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  outline: none;
+  user-select: none;
+  min-width: 44px;
+  min-height: 44px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(2px);
+}
+
+.cpf-generator-btn:active,
+.cpf-copy-btn:active,
+.cpf-paste-btn:active,
+.cpf-validator-btn:active {
+  transform: scale(0.97);
+}
+
+.cpf-generator-btn:disabled,
+.cpf-copy-btn:disabled,
+.cpf-paste-btn:disabled,
+.cpf-validator-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cpf-copy-btn,
+.cpf-paste-btn {
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: #002e1fec;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.06);
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+}
+
+.cpf-validator-btn {
+  background: #002e1fec;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.cpf-validator-btn:hover:not(:disabled),
+.cpf-generator-btn:hover:not(:disabled),
+.cpf-copy-btn:hover:not(:disabled),
+.cpf-paste-btn:hover:not(:disabled) {
+  background: #005337fd;
+  box-shadow: 0 8px 24px 0 rgba(44, 62, 80, 0.15);
+  color: #fff;
+  filter: brightness(1.08);
+}
+
+.btn-icon,
+.cpf-btn-check {
+  font-size: 1.35em;
+  line-height: 1;
+  width: 1.35em;
+  height: 1.35em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cpf-btn-check {
+  color: #000000;
+  margin-left: 0;
+  animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.cpf-generator-btn,
+.cpf-copy-btn,
+.cpf-paste-btn,
+.cpf-validator-btn {
+  background: #002e1fec;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px 0 rgba(44, 62, 80, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  outline: none;
+  user-select: none;
+  min-width: 44px;
+  min-height: 44px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(2px);
+}
+
+.cpf-generator-btn:hover:not(:disabled),
+.cpf-copy-btn:hover:not(:disabled),
+.cpf-paste-btn:hover:not(:disabled),
+.cpf-validator-btn:hover:not(:disabled) {
+  background: #005337fd;
+  box-shadow: 0 12px 32px 0 rgba(44, 62, 80, 0.18);
+  color: #fff;
+  filter: brightness(1.12) saturate(1.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.cpf-generator-btn:active,
+.cpf-copy-btn:active,
+.cpf-paste-btn:active,
+.cpf-validator-btn:active {
+  transform: scale(0.97);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.cpf-generator-output-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.1rem;
+}
+
+.cpf-generator-output {
+  flex: 1;
+  width: 100%;
+  padding: 0.7rem;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.95;
+  border: 1.5px solid #b7e4c7;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  text-align: center;
+  background: rgba(232, 248, 245, 0.8);
+  color: #000000;
+  font-family: monospace;
+  box-sizing: border-box;
+  box-shadow: 0 1.5px 8px 0 #e8f8f5;
+}
+
+.cpf-validator-title {
+  font-size: 1.25rem;
+  font-family: monospace, monospace;
+  color: #000000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.cpf-validator-label-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.cpf-validator-input {
+  flex: 1;
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #b7e4c7;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  text-align: center;
+  background: rgba(232, 248, 245, 0.8);
+  color: #000000;
+  font-family: monospace;
+  box-sizing: border-box;
+  box-shadow: 0 1.5px 8px 0 #e8f8f5;
+}
+
+.cpf-validator-input::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+.cpf-validator-result {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.cpf-validator-result.valid {
+  color: #000000;
+}
+
+.cpf-validator-result.invalid {
+  color: #e57373;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .cpf-generator-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .cpf-generator-title {
+    font-size: 1.3rem;
+  }
+  .cpf-generator-checkbox label {
+    font-size: 0.95rem;
+  }
+}

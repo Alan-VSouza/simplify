@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.home {
+  background: url("../assets/images/mountain_home_tree.jpg") no-repeat center
+    center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  background: #000000d2;
+  padding: 40px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #2d5a27;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #4a7c59;
+  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+}
