@@ -1,0 +1,168 @@
+.conversor-page-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #e4f5ec 0%, #f7f8fa 100%),
+    url("https://www.transparenttextures.com/patterns/leaf.png");
+  background-blend-mode: lighten;
+  background-size: cover, auto;
+  padding: 2rem 1rem; 
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+.conversor-container {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.13), 0 1.5px 12px 0 #b7e4c7;
+  padding: 2.5rem 2rem;
+  max-width: 32rem;
+  width: 100%;
+  margin: 2rem 1rem;
+  color: #23402a;
+  backdrop-filter: blur(5px);
+  border: 1.5px solid #b7e4c7;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  box-sizing: border-box;
+}
+
+.conversor-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px #e4f5ec;
+}
+
+.conversor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.conversor-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.conversor-input,
+.conversor-select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #b7e4c7;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  text-align: center;
+  background: rgba(232, 248, 245, 0.8);
+  color: #09160b;
+  font-family: monospace;
+  box-sizing: border-box;
+  box-shadow: 0 1.5px 8px 0 #e8f8f5;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.conversor-input:focus,
+.conversor-select:focus {
+  outline: none;
+  border-color: #2d5a27;
+  box-shadow: 0 0 0 2px #b7e4c7;
+}
+
+.conversor-swap {
+  background: #002e1fec;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.conversor-swap:hover {
+  background: #005337fd;
+  box-shadow: 0 8px 24px 0 rgba(44, 62, 80, 0.15);
+  color: #fff;
+  filter: brightness(1.08);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.conversor-btn {
+  background: #002e1fec;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px 0 rgba(44, 62, 80, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(2px);
+  margin-top: 0.8rem;
+  width: 100%;
+}
+
+.conversor-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.conversor-btn:hover:not(:disabled) {
+  background: #005337fd;
+  box-shadow: 0 12px 32px 0 rgba(44, 62, 80, 0.18);
+  color: #fff;
+  filter: brightness(1.12) saturate(1.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.conversor-resultado {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-size: 1.25rem;
+  color: #2d5a27;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 0;
+  box-shadow: 0 1.5px 8px 0 #e8f8f5;
+  font-family: monospace;
+}
+
+@media (max-width: 600px) {
+  .conversor-container {
+    padding: 1.2rem 0.5rem;
+    margin: 1rem 0.2rem;
+    max-width: 99vw;
+  }
+  .conversor-title {
+    font-size: 1.3rem;
+  }
+  .conversor-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
