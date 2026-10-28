@@ -1,14 +1,16 @@
 {
   "name": "simplify",
-  "version": "1.0.0",
-  "description": "🌿 Plataforma web de utilitários com tema de natureza - Simplificando Sua Vida Digital",
+  "version": "2.0.0",
+  "description": "A nature-themed collection of everyday web utilities, built as a React + TypeScript portfolio project",
+  "private": true,
+  "type": "module",
   "keywords": [
     "react",
     "typescript",
+    "vite",
+    "pwa",
     "utilities",
-    "sustainability",
-    "tools",
-    "green-tech"
+    "brazil"
   ],
   "author": "Alan Souza <alansouzeesi@gmail.com>",
   "license": "MIT",
@@ -17,43 +19,48 @@
     "url": "https://github.com/Alan-VSouza/simplify.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "format": "prettier --write src/**/*.{ts,tsx,css,md}",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
+    "typecheck": "tsc -b --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "axios": "^1.10.0",
-    "framer-motion": "^10.0.0",
-    "gerador-validador-cpf": "^6.3.0",
-    "qrcode": "^1.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.0",
-    "react-hot-toast": "^2.4.0",
-    "react-icons": "^4.7.0",
-    "react-router-dom": "^6.8.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.0",
-    "typescript": "5.8.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.34.0",
-    "gh-pages": "^5.0.0",
-    "prettier": "^2.8.4"
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "@vitest/coverage-v8": "^2.1.5",
+    "eslint": "^8.57.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "gh-pages": "^6.2.0",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.5"
   },
   "browserslist": {
     "production": [
@@ -66,8 +73,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolutions": {
-    "typescript": "5.8.3"
   }
 }
