@@ -139,7 +139,8 @@ home page, search, filters and routing all pick it up automatically.
 - [ ] Full i18n (the UI is in Portuguese for the primary Brazilian audience,
       but all user-facing strings are already centralized per component,
       which is the main prerequisite for adding `react-i18next` later)
-- [ ] More unit converters (data storage, speed)
+- [x] More unit converters (data storage, speed) — added digital storage
+      (bytes to terabytes) and speed (m/s, km/h, mph, knots) categories
 - [ ] Dark-mode-aware chart colors picked from a palette instead of CSS vars
       inline in SVG
 

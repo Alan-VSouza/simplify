@@ -9,6 +9,8 @@ const CATEGORY_LABEL: Record<UnitCategory, string> = {
   mass: 'Massa',
   volume: 'Volume',
   temperature: 'Temperatura',
+  digital: 'Armazenamento Digital',
+  speed: 'Velocidade',
 };
 
 export default function UnitConverterTool() {

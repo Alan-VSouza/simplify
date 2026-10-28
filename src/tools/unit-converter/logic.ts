@@ -1,4 +1,4 @@
-export type UnitCategory = 'length' | 'mass' | 'volume' | 'temperature';
+export type UnitCategory = 'length' | 'mass' | 'volume' | 'temperature' | 'digital' | 'speed';
 
 export interface UnitDefinition {
   id: string;
@@ -33,6 +33,19 @@ export const UNITS: Record<UnitCategory, UnitDefinition[]> = {
     { id: 'f', label: 'Fahrenheit' },
     { id: 'k', label: 'Kelvin' },
   ],
+  digital: [
+    { id: 'b', label: 'Bytes' },
+    { id: 'kb', label: 'Kilobytes' },
+    { id: 'mb', label: 'Megabytes' },
+    { id: 'gb', label: 'Gigabytes' },
+    { id: 'tb', label: 'Terabytes' },
+  ],
+  speed: [
+    { id: 'mps', label: 'Metros/segundo' },
+    { id: 'kmh', label: 'Quilômetros/hora' },
+    { id: 'mph', label: 'Milhas/hora' },
+    { id: 'knot', label: 'Nós' },
+  ],
 };
 
 const LENGTH_TO_METERS: Record<string, number> = {
@@ -58,6 +71,21 @@ const VOLUME_TO_LITERS: Record<string, number> = {
   l: 1,
   gal: 3.785411784,
   cup: 0.2365882365,
+};
+
+const DIGITAL_TO_BYTES: Record<string, number> = {
+  b: 1,
+  kb: 1024,
+  mb: 1024 ** 2,
+  gb: 1024 ** 3,
+  tb: 1024 ** 4,
+};
+
+const SPEED_TO_MPS: Record<string, number> = {
+  mps: 1,
+  kmh: 1 / 3.6,
+  mph: 0.44704,
+  knot: 0.514444,
 };
 
 function convertLinear(value: number, from: string, to: string, table: Record<string, number>) {
@@ -91,6 +119,10 @@ export function convertUnit(
       return convertLinear(value, from, to, MASS_TO_GRAMS);
     case 'volume':
       return convertLinear(value, from, to, VOLUME_TO_LITERS);
+    case 'digital':
+      return convertLinear(value, from, to, DIGITAL_TO_BYTES);
+    case 'speed':
+      return convertLinear(value, from, to, SPEED_TO_MPS);
     case 'temperature':
       return celsiusToUnit(unitToCelsius(value, from), to);
     default:

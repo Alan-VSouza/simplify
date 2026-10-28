@@ -25,4 +25,16 @@ describe('convertUnit', () => {
     expect(convertUnit(100, 'c', 'f', 'temperature')).toBeCloseTo(212);
     expect(convertUnit(0, 'c', 'k', 'temperature')).toBeCloseTo(273.15);
   });
+
+  it('converts digital storage units', () => {
+    expect(convertUnit(1, 'gb', 'mb', 'digital')).toBeCloseTo(1024);
+    expect(convertUnit(1024, 'kb', 'mb', 'digital')).toBeCloseTo(1);
+    expect(convertUnit(1, 'tb', 'gb', 'digital')).toBeCloseTo(1024);
+  });
+
+  it('converts speed units', () => {
+    expect(convertUnit(1, 'kmh', 'mps', 'speed')).toBeCloseTo(0.277778, 5);
+    expect(convertUnit(1, 'mps', 'kmh', 'speed')).toBeCloseTo(3.6);
+    expect(convertUnit(1, 'knot', 'mps', 'speed')).toBeCloseTo(0.514444, 5);
+  });
 });
