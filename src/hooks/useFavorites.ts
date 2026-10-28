@@ -9,9 +9,7 @@ export function useFavorites() {
   const toggleFavorite = useCallback(
     (toolId: string) => {
       setFavorites((current) =>
-        current.includes(toolId)
-          ? current.filter((id) => id !== toolId)
-          : [...current, toolId],
+        current.includes(toolId) ? current.filter((id) => id !== toolId) : [...current, toolId],
       );
     },
     [setFavorites],

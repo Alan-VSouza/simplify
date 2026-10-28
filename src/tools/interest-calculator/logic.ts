@@ -12,9 +12,7 @@ export interface CompoundInterestPoint {
   interest: number;
 }
 
-export function calculateCompoundInterest(
-  input: CompoundInterestInput,
-): CompoundInterestPoint[] {
+export function calculateCompoundInterest(input: CompoundInterestInput): CompoundInterestPoint[] {
   const points: CompoundInterestPoint[] = [];
   let balance = input.principal;
   let contributed = input.principal;

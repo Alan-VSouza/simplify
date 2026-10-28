@@ -3,14 +3,7 @@ import toast from 'react-hot-toast';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import {
-  generateCnpj,
-  generateCpf,
-  isValidCnpj,
-  isValidCpf,
-  maskCnpj,
-  maskCpf,
-} from './logic';
+import { generateCnpj, generateCpf, isValidCnpj, isValidCpf, maskCnpj, maskCpf } from './logic';
 import styles from './CpfCnpjTool.module.css';
 
 type DocType = 'cpf' | 'cnpj';

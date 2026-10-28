@@ -54,7 +54,12 @@ export default function CepTool() {
           </div>
         </form>
 
-        <AsyncState loading={loading} error={error} empty={!address} emptyMessage="Digite um CEP para buscar o endereço.">
+        <AsyncState
+          loading={loading}
+          error={error}
+          empty={!address}
+          emptyMessage="Digite um CEP para buscar o endereço."
+        >
           {address && (
             <dl className={styles.result}>
               <div>

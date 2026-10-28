@@ -94,9 +94,11 @@ export default function UnitConverterTool() {
         </div>
 
         <output className={styles.result}>
-          {result === null ? 'Digite um valor numérico válido.' : result.toLocaleString('pt-BR', {
-            maximumFractionDigits: 6,
-          })}
+          {result === null
+            ? 'Digite um valor numérico válido.'
+            : result.toLocaleString('pt-BR', {
+                maximumFractionDigits: 6,
+              })}
         </output>
       </Card>
     </div>

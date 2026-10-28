@@ -60,7 +60,12 @@ function InvestmentPanel() {
     const c = parseFloat(contribution) || 0;
     const rate = annualToMonthlyRate(parseFloat(annualRate) || 0);
     const m = Math.max(1, Math.min(600, parseInt(months, 10) || 0));
-    return calculateCompoundInterest({ principal: p, monthlyContribution: c, monthlyRate: rate, months: m });
+    return calculateCompoundInterest({
+      principal: p,
+      monthlyContribution: c,
+      monthlyRate: rate,
+      months: m,
+    });
   }, [principal, contribution, annualRate, months]);
 
   const last = points[points.length - 1];
@@ -70,19 +75,39 @@ function InvestmentPanel() {
       <div className={styles.grid}>
         <div className={styles.field}>
           <label htmlFor="principal">Valor inicial (R$)</label>
-          <input id="principal" value={principal} onChange={(e) => setPrincipal(e.target.value)} inputMode="decimal" />
+          <input
+            id="principal"
+            value={principal}
+            onChange={(e) => setPrincipal(e.target.value)}
+            inputMode="decimal"
+          />
         </div>
         <div className={styles.field}>
           <label htmlFor="contribution">Aporte mensal (R$)</label>
-          <input id="contribution" value={contribution} onChange={(e) => setContribution(e.target.value)} inputMode="decimal" />
+          <input
+            id="contribution"
+            value={contribution}
+            onChange={(e) => setContribution(e.target.value)}
+            inputMode="decimal"
+          />
         </div>
         <div className={styles.field}>
           <label htmlFor="rate">Taxa de juros anual (%)</label>
-          <input id="rate" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)} inputMode="decimal" />
+          <input
+            id="rate"
+            value={annualRate}
+            onChange={(e) => setAnnualRate(e.target.value)}
+            inputMode="decimal"
+          />
         </div>
         <div className={styles.field}>
           <label htmlFor="months">Período (meses)</label>
-          <input id="months" value={months} onChange={(e) => setMonths(e.target.value)} inputMode="numeric" />
+          <input
+            id="months"
+            value={months}
+            onChange={(e) => setMonths(e.target.value)}
+            inputMode="numeric"
+          />
         </div>
       </div>
 
@@ -105,7 +130,11 @@ function InvestmentPanel() {
         ariaLabel="Evolução do saldo e do valor investido ao longo do tempo"
         series={[
           { label: 'Saldo', color: 'var(--accent)', values: points.map((p) => p.balance) },
-          { label: 'Investido', color: 'var(--earth-brown)', values: points.map((p) => p.contributed) },
+          {
+            label: 'Investido',
+            color: 'var(--earth-brown)',
+            values: points.map((p) => p.contributed),
+          },
         ]}
       />
     </Card>
@@ -132,22 +161,41 @@ function FinancingPanel() {
       <div className={styles.grid}>
         <div className={styles.field}>
           <label htmlFor="system">Sistema de amortização</label>
-          <select id="system" value={system} onChange={(e) => setSystem(e.target.value as 'price' | 'sac')}>
+          <select
+            id="system"
+            value={system}
+            onChange={(e) => setSystem(e.target.value as 'price' | 'sac')}
+          >
             <option value="price">Price (parcelas fixas)</option>
             <option value="sac">SAC (amortização constante)</option>
           </select>
         </div>
         <div className={styles.field}>
           <label htmlFor="financing-principal">Valor financiado (R$)</label>
-          <input id="financing-principal" value={principal} onChange={(e) => setPrincipal(e.target.value)} inputMode="decimal" />
+          <input
+            id="financing-principal"
+            value={principal}
+            onChange={(e) => setPrincipal(e.target.value)}
+            inputMode="decimal"
+          />
         </div>
         <div className={styles.field}>
           <label htmlFor="financing-rate">Taxa de juros anual (%)</label>
-          <input id="financing-rate" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)} inputMode="decimal" />
+          <input
+            id="financing-rate"
+            value={annualRate}
+            onChange={(e) => setAnnualRate(e.target.value)}
+            inputMode="decimal"
+          />
         </div>
         <div className={styles.field}>
           <label htmlFor="financing-months">Prazo (meses)</label>
-          <input id="financing-months" value={months} onChange={(e) => setMonths(e.target.value)} inputMode="numeric" />
+          <input
+            id="financing-months"
+            value={months}
+            onChange={(e) => setMonths(e.target.value)}
+            inputMode="numeric"
+          />
         </div>
       </div>
 
@@ -170,7 +218,11 @@ function FinancingPanel() {
         ariaLabel="Evolução do valor das parcelas e do saldo devedor ao longo do tempo"
         series={[
           { label: 'Parcela', color: 'var(--accent)', values: rows.map((r) => r.installment) },
-          { label: 'Saldo devedor', color: 'var(--earth-brown)', values: rows.map((r) => r.balance) },
+          {
+            label: 'Saldo devedor',
+            color: 'var(--earth-brown)',
+            values: rows.map((r) => r.balance),
+          },
         ]}
       />
 

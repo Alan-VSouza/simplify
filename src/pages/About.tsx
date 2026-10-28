@@ -11,9 +11,9 @@ export function About() {
     <div className={`container ${styles.page}`}>
       <h1>Sobre o Simplify</h1>
       <p>
-        O Simplify é uma coleção de ferramentas simples e gratuitas para tarefas do dia a dia:
-        gerar e validar documentos, converter moedas e unidades, calcular juros, criar senhas
-        seguras e muito mais.
+        O Simplify é uma coleção de ferramentas simples e gratuitas para tarefas do dia a dia: gerar
+        e validar documentos, converter moedas e unidades, calcular juros, criar senhas seguras e
+        muito mais.
       </p>
       <p>
         O projeto é open source e foi criado como um espaço para praticar boas práticas de

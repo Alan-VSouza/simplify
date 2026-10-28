@@ -89,8 +89,7 @@ export const tools: Tool[] = [
     id: 'unit-converter',
     name: 'Conversor de Unidades',
     shortDescription: 'Converta comprimento, massa, volume e temperatura.',
-    description:
-      'Converte valores entre unidades de comprimento, massa, volume e temperatura.',
+    description: 'Converte valores entre unidades de comprimento, massa, volume e temperatura.',
     path: '/ferramentas/conversor-unidades',
     icon: FaRulerCombined,
     tags: ['conversor', 'utilidades'],

@@ -115,6 +115,12 @@ home page, search, filters and routing all pick it up automatically.
 - **No charting library for the financing chart.** A single small SVG
   polyline component covers the one chart this app needs, without the bundle
   weight of a full charting library.
+- **A landing-page home, not a plain list.** The home page opens with a full
+  hero (badge, headline, CTAs, a stats strip) instead of jumping straight to
+  the tool grid, so the project reads as a product rather than an unstyled
+  index. A hand-drawn root-system SVG (`RootDivider`) bridges the hero into
+  the tool grid, reinforcing the leaf/tree identity without any image assets
+  or animation library.
 
 ## Testing strategy
 
