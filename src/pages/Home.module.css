@@ -1,0 +1,128 @@
+.hero {
+  text-align: center;
+  padding: var(--space-12) 0 var(--space-8);
+}
+
+.hero h1 {
+  font-family: var(--font-secondary);
+  color: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.searchBox input {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+}
+
+.tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tag,
+.tagActive {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  border-radius: var(--radius-xl);
+  padding: var(--space-1) var(--space-4);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.tagActive {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.grid {
+  list-style: none;
+  margin: 0 0 var(--space-12);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  color: var(--earth-brown);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card h2 a:hover {
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-8) 0;
+}

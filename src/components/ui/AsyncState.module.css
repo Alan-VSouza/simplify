@@ -1,0 +1,8 @@
+.status {
+  color: var(--text-muted);
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+}

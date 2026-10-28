@@ -1,0 +1,14 @@
+.page {
+  padding: var(--space-8) 0 var(--space-12);
+  max-width: 720px;
+}
+
+.page h1 {
+  color: var(--accent);
+  font-family: var(--font-secondary);
+}
+
+.page p {
+  color: var(--text);
+  line-height: 1.6;
+}

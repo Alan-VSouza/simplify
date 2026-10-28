@@ -1,0 +1,38 @@
+.page {
+  padding: var(--space-8) 0 var(--space-12);
+  max-width: 560px;
+}
+
+.page h1 {
+  color: var(--accent);
+  font-family: var(--font-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field textarea {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}

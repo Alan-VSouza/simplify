@@ -1,87 +1,84 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import "../styles/contact.css"
+import { useState, type FormEvent } from 'react';
+import toast from 'react-hot-toast';
+import { useDocumentHead } from '../hooks/useDocumentHead';
+import { Button } from '../components/ui/Button';
+import { Input } from '../components/ui/Input';
+import styles from './Contact.module.css';
 
-const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ nome: "", email: "", mensagem: "" });
-  const [message, setMessage] = useState("");
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+export function Contact() {
+  useDocumentHead('Contato', 'Fale com o time do Simplify: dúvidas, sugestões e feedback.');
+
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const isConfigured = Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!isConfigured) {
+      toast.error('O envio de e-mail não está configurado neste ambiente.');
+      return;
+    }
+
     setLoading(true);
-
-    const emailParams = {
-      from_name: formData.nome,
-      reply_to: formData.email, 
-      message: formData.mensagem,
-    };
-
-    emailjs
-      .send(
-        "service_fsk4yj3",         
-        "template_srw7igy",        
-        emailParams,
-        "W7x_RJt4nQ5dcZQNe"        
-      )
-      .then(() => {
-        setMessage("✅ E-mail enviado com sucesso!");
-        setFormData({ nome: "", email: "", mensagem: "" });
-      })
-      .catch(() => setMessage("❌ Erro ao enviar e-mail. Tente novamente."))
-      .finally(() => setLoading(false));
+    try {
+      const emailjs = await import('@emailjs/browser');
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { from_name: formData.name, reply_to: formData.email, message: formData.message },
+        EMAILJS_PUBLIC_KEY,
+      );
+      toast.success('Mensagem enviada com sucesso!');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      toast.error('Não foi possível enviar a mensagem. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   };
-
-
 
   return (
-    <motion.section
-      className="contact"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <h2>Entre em Contato</h2>
-      <p>Tem dúvidas ou sugestões? Fale conosco!</p>
+    <div className={`container ${styles.page}`}>
+      <h1>Entre em contato</h1>
+      <p>Tem dúvidas ou sugestões? Fale com a gente!</p>
 
-      <form className="contact-form" onSubmit={sendEmail}>
-        <input
-          type="text"
-          name="nome"
-          placeholder="Seu Nome"
-          value={formData.nome}
-          onChange={handleChange}
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Input
+          label="Seu nome"
+          name="name"
+          value={formData.name}
+          onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
           required
         />
-        <input
+        <Input
+          label="Seu e-mail"
           type="email"
           name="email"
-          placeholder="Seu E-mail"
           value={formData.email}
-          onChange={handleChange}
+          onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
           required
         />
-        <textarea
-          name="mensagem"
-          placeholder="Digite sua mensagem..."
-          value={formData.mensagem}
-          onChange={handleChange}
-          required
-        ></textarea>
-        <button type="submit" disabled={loading}>
-          {loading ? "Enviando..." : "Enviar"}
-        </button>
+        <div className={styles.field}>
+          <label htmlFor="message">Mensagem</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            value={formData.message}
+            onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+            required
+          />
+        </div>
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Enviando...' : 'Enviar'}
+        </Button>
       </form>
-
-      {message && <p className="success-message">{message}</p>}
-    </motion.section>
+    </div>
   );
-};
-
-export default Contact;
+}
