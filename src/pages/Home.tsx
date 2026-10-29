@@ -6,6 +6,7 @@ import { useFavorites } from '../hooks/useFavorites';
 import { useDocumentHead } from '../hooks/useDocumentHead';
 import { Card } from '../components/ui/Card';
 import { RootDivider } from '../components/ui/RootDivider';
+import { MistyMountains } from '../components/ui/MistyMountains';
 import styles from './Home.module.css';
 
 const STATS = [
@@ -32,6 +33,8 @@ export function Home() {
     <>
       <section className={styles.hero}>
         <div className={`container ${styles.frame}`}>
+          <MistyMountains className={styles.mountains} />
+          <div className={styles.heroVeil} aria-hidden="true" />
           <div className={styles.heroGrid} aria-hidden="true" />
           <div className={styles.heroInner}>
             <span className={styles.badge}>🌱 100% gratuito · sem anúncios · sem cadastro</span>
