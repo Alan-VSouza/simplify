@@ -31,38 +31,44 @@ export function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroGrid} aria-hidden="true" />
-        <div className={`container ${styles.heroInner}`}>
-          <span className={styles.badge}>🌱 100% gratuito · sem anúncios · sem cadastro</span>
-          <h1 className={styles.title}>Ferramentas simples para o seu dia a dia</h1>
-          <p className={styles.subtitle}>
-            Calculadoras, conversores, geradores e validadores gratuitos — leves, rápidos e
-            funcionando até sem internet.
-          </p>
+        <div className={`container ${styles.frame}`}>
+          <div className={styles.heroGrid} aria-hidden="true" />
+          <div className={styles.heroInner}>
+            <span className={styles.badge}>🌱 100% gratuito · sem anúncios · sem cadastro</span>
+            <h1 className={styles.title}>
+              Ferramentas simples
+              <br />
+              <span className={styles.titleAccent}>para o seu dia a dia</span>
+            </h1>
+            <p className={styles.subtitle}>
+              Calculadoras, conversores, geradores e validadores gratuitos — leves, rápidos e
+              funcionando até sem internet.
+            </p>
 
-          <div className={styles.ctas}>
-            <a href="#ferramentas" className="btnPrimary">
-              Explorar ferramentas
-            </a>
-            <a
-              href="https://github.com/Alan-VSouza/simplify"
-              target="_blank"
-              rel="noreferrer"
-              className={`btnGhost ${styles.ctaGhost}`}
-            >
-              <FaGithub aria-hidden="true" />
-              Ver código no GitHub
-            </a>
+            <div className={styles.ctas}>
+              <a href="#ferramentas" className="btnPrimary">
+                Explorar ferramentas
+              </a>
+              <a
+                href="https://github.com/Alan-VSouza/simplify"
+                target="_blank"
+                rel="noreferrer"
+                className={`btnGhost ${styles.ctaGhost}`}
+              >
+                <FaGithub aria-hidden="true" />
+                Ver código no GitHub
+              </a>
+            </div>
+
+            <dl className={styles.stats}>
+              {STATS.map((stat) => (
+                <div key={stat.label} className={styles.statItem}>
+                  <dt className={styles.statValue}>{stat.value}</dt>
+                  <dd className={styles.statLabel}>{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-
-          <dl className={styles.stats}>
-            {STATS.map((stat) => (
-              <div key={stat.label} className={styles.statItem}>
-                <dt className={styles.statValue}>{stat.value}</dt>
-                <dd className={styles.statLabel}>{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 

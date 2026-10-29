@@ -1,9 +1,16 @@
 .hero {
+  padding: clamp(32px, 5vw, 56px) 0 clamp(40px, 6vw, 64px);
+}
+
+.frame {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(243, 247, 241, 0.14);
   background: linear-gradient(180deg, var(--ink) 0%, var(--ink-700) 100%);
-  padding: clamp(72px, 10vw, 120px) 0 clamp(40px, 6vw, 64px);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(48px, 8vw, 96px) var(--space-6);
 }
 
 .heroGrid {
@@ -50,6 +57,10 @@
   color: var(--on-ink);
   max-width: 18ch;
   margin: 0;
+}
+
+.titleAccent {
+  color: var(--leaf-green);
 }
 
 .subtitle {
@@ -112,8 +123,7 @@
 
 .roots {
   display: block;
-  margin-top: -2px;
-  background: linear-gradient(180deg, var(--ink-700) 0%, var(--ink-700) 32%, transparent 100%);
+  margin-top: -8px;
 }
 
 .controls {
