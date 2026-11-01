@@ -132,7 +132,7 @@ function InvestmentPanel() {
           { label: 'Saldo', color: 'var(--accent)', values: points.map((p) => p.balance) },
           {
             label: 'Investido',
-            color: 'var(--earth-brown)',
+            color: 'var(--gold)',
             values: points.map((p) => p.contributed),
           },
         ]}
@@ -220,7 +220,7 @@ function FinancingPanel() {
           { label: 'Parcela', color: 'var(--accent)', values: rows.map((r) => r.installment) },
           {
             label: 'Saldo devedor',
-            color: 'var(--earth-brown)',
+            color: 'var(--gold)',
             values: rows.map((r) => r.balance),
           },
         ]}

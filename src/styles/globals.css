@@ -1,30 +1,15 @@
-:root,
-:root[data-theme='light'] {
-  --forest-green: #4f6b21;
-  --sage-green: #6f8f34;
-  --leaf-green: #8bae3c;
-  --canopy-green: #a3c95a;
-  --earth-brown: #8b4513;
-  --root-brown: #5c3a21;
-  --sky-blue: #87ceeb;
-
-  --bg: #f5f5dc;
-  --surface: #ffffff;
-  --surface-muted: #f8f9fa;
-  --text: #36454f;
-  --text-muted: #5b6b73;
-  --border: rgba(54, 69, 79, 0.12);
-
-  --accent: var(--leaf-green);
-  --accent-hover: var(--canopy-green);
-  --accent-contrast: var(--ink);
-  --danger: #b3261e;
-  --success: #1e7b34;
-
-  --ink: #14170d;
-  --ink-700: #1c2013;
-  --on-ink: #f3f7f1;
-  --on-ink-muted: rgba(243, 247, 241, 0.72);
+:root {
+  /* Raw brand hues — a terracotta/plum duo instead of green. These stay the
+     same across light/dark themes; only the semantic tokens below switch. */
+  --terracotta-deep: #c2411f;
+  --terracotta-mid: #d9502f;
+  --terracotta-bright: #e8835f;
+  --terracotta-pale: #f2ae8d;
+  --gold: #c9972e;
+  --plum-ink: #1a1430;
+  --plum-ink-700: #241c3d;
+  --on-plum: #f6f2fb;
+  --on-plum-muted: rgba(246, 242, 251, 0.72);
 
   --font-primary: 'Inter', system-ui, sans-serif;
   --font-secondary: 'Fraunces', 'Georgia', serif;
@@ -48,46 +33,71 @@
   --radius-xl: 16px;
   --radius-full: 999px;
 
-  --shadow-sm: 0 1px 2px rgba(54, 69, 79, 0.05);
-  --shadow-md: 0 4px 12px rgba(54, 69, 79, 0.1);
-  --shadow-lg: 0 10px 25px rgba(54, 69, 79, 0.15);
-  --shadow-glow: 0 10px 32px rgba(139, 174, 60, 0.32);
+  --ink: var(--plum-ink);
+  --ink-700: var(--plum-ink-700);
+  --on-ink: var(--on-plum);
+  --on-ink-muted: var(--on-plum-muted);
+
+  /* Always-bright accent for things that live on the dark hero/illustrations,
+     regardless of the active light/dark site theme. */
+  --accent-bright: var(--terracotta-bright);
+}
+
+:root,
+:root[data-theme='light'] {
+  --bg: #faf5ef;
+  --surface: #ffffff;
+  --surface-muted: #f5f0ea;
+  --text: #2e2635;
+  --text-muted: #6b6276;
+  --border: rgba(46, 38, 53, 0.12);
+
+  --accent: var(--terracotta-deep);
+  --accent-hover: var(--terracotta-mid);
+  --accent-contrast: #ffffff;
+  --danger: #b3261e;
+  --success: #1e7b34;
+
+  --shadow-sm: 0 1px 2px rgba(46, 38, 53, 0.05);
+  --shadow-md: 0 4px 12px rgba(46, 38, 53, 0.1);
+  --shadow-lg: 0 10px 25px rgba(46, 38, 53, 0.15);
+  --shadow-glow: 0 10px 32px rgba(194, 65, 31, 0.3);
 
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-  --bg: #1b2420;
-  --surface: #232f28;
-  --surface-muted: #1f2a24;
-  --text: #e9f1ec;
-  --text-muted: #a9bcb2;
-  --border: rgba(233, 241, 236, 0.12);
+  --bg: #18141f;
+  --surface: #221c2d;
+  --surface-muted: #1d1826;
+  --text: #ece7f2;
+  --text-muted: #a89fb8;
+  --border: rgba(236, 231, 242, 0.12);
 
-  --accent: var(--leaf-green);
-  --accent-hover: var(--canopy-green);
+  --accent: var(--terracotta-bright);
+  --accent-hover: var(--terracotta-pale);
   --accent-contrast: var(--ink);
   --danger: #ff8a80;
-  --success: #8bae3c;
+  --success: #8bc07a;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 10px 32px rgba(139, 174, 60, 0.32);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 10px 32px rgba(232, 131, 95, 0.32);
 
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --bg: #1b2420;
-    --surface: #232f28;
-    --surface-muted: #1f2a24;
-    --text: #e9f1ec;
-    --text-muted: #a9bcb2;
-    --border: rgba(233, 241, 236, 0.12);
-    --accent: var(--leaf-green);
-    --accent-hover: var(--canopy-green);
+    --bg: #18141f;
+    --surface: #221c2d;
+    --surface-muted: #1d1826;
+    --text: #ece7f2;
+    --text-muted: #a89fb8;
+    --border: rgba(236, 231, 242, 0.12);
+    --accent: var(--terracotta-bright);
+    --accent-hover: var(--terracotta-pale);
     --accent-contrast: var(--ink);
     color-scheme: dark;
   }
@@ -152,7 +162,11 @@ a {
 
 .btnPrimary:hover {
   background: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btnPrimary:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .btnGhost {
@@ -164,10 +178,13 @@ a {
 .btnGhost:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btnPrimary:hover {
+  .btnPrimary:hover,
+  .btnPrimary:active,
+  .btnGhost:hover {
     transform: none;
   }
 }
@@ -211,4 +228,24 @@ button {
 
 .skip-link:focus {
   left: var(--space-2);
+}
+
+/* Shared entrance animation: fades and lifts an element into place. Apply
+   `animation-delay` per element for a staggered reveal. Skipped entirely
+   when the user prefers reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      translate: 0 16px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  .animateIn {
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 }

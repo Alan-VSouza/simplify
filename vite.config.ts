@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'Simplify',
         short_name: 'Simplify',
         description: 'A nature-themed collection of everyday web utilities',
-        theme_color: '#4f6b21',
+        theme_color: '#c2411f',
         background_color: '#f5f5dc',
         display: 'standalone',
         start_url: '/simplify/',

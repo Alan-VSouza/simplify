@@ -37,18 +37,20 @@ export function Home() {
           <div className={styles.heroVeil} aria-hidden="true" />
           <div className={styles.heroGrid} aria-hidden="true" />
           <div className={styles.heroInner}>
-            <span className={styles.badge}>🌱 100% gratuito · sem anúncios · sem cadastro</span>
-            <h1 className={styles.title}>
+            <span className={`${styles.badge} animateIn`} style={{ animationDelay: '0ms' }}>
+              ✨ 100% gratuito · sem anúncios · sem cadastro
+            </span>
+            <h1 className={`${styles.title} animateIn`} style={{ animationDelay: '80ms' }}>
               Ferramentas simples
               <br />
               <span className={styles.titleAccent}>para o seu dia a dia</span>
             </h1>
-            <p className={styles.subtitle}>
+            <p className={`${styles.subtitle} animateIn`} style={{ animationDelay: '160ms' }}>
               Calculadoras, conversores, geradores e validadores gratuitos — leves, rápidos e
               funcionando até sem internet.
             </p>
 
-            <div className={styles.ctas}>
+            <div className={`${styles.ctas} animateIn`} style={{ animationDelay: '240ms' }}>
               <a href="#ferramentas" className="btnPrimary">
                 Explorar ferramentas
               </a>
@@ -63,7 +65,7 @@ export function Home() {
               </a>
             </div>
 
-            <dl className={styles.stats}>
+            <dl className={`${styles.stats} animateIn`} style={{ animationDelay: '320ms' }}>
               {STATS.map((stat) => (
                 <div key={stat.label} className={styles.statItem}>
                   <dt className={styles.statValue}>{stat.value}</dt>
