@@ -1,15 +1,15 @@
 :root {
-  /* Raw brand hues — a terracotta/plum duo instead of green. These stay the
-     same across light/dark themes; only the semantic tokens below switch. */
-  --terracotta-deep: #c2411f;
-  --terracotta-mid: #d9502f;
-  --terracotta-bright: #e8835f;
-  --terracotta-pale: #f2ae8d;
+  /* Raw brand hues — a confident, modern blue duo. These stay the same
+     across light/dark themes; only the semantic tokens below switch. */
+  --azure-deep: #1d4ed8;
+  --azure-mid: #2f5fe0;
+  --azure-bright: #5b8ef5;
+  --azure-pale: #bcd3fb;
   --gold: #c9972e;
-  --plum-ink: #1a1430;
-  --plum-ink-700: #241c3d;
-  --on-plum: #f6f2fb;
-  --on-plum-muted: rgba(246, 242, 251, 0.72);
+  --slate-ink: #0b0f1a;
+  --slate-ink-700: #131a2b;
+  --on-slate: #e7ecf7;
+  --on-slate-muted: rgba(231, 236, 247, 0.72);
 
   --font-primary: 'Inter', system-ui, sans-serif;
   --font-secondary: 'Fraunces', 'Georgia', serif;
@@ -33,49 +33,49 @@
   --radius-xl: 16px;
   --radius-full: 999px;
 
-  --ink: var(--plum-ink);
-  --ink-700: var(--plum-ink-700);
-  --on-ink: var(--on-plum);
-  --on-ink-muted: var(--on-plum-muted);
+  --ink: var(--slate-ink);
+  --ink-700: var(--slate-ink-700);
+  --on-ink: var(--on-slate);
+  --on-ink-muted: var(--on-slate-muted);
 
   /* Always-bright accent for things that live on the dark hero/illustrations,
      regardless of the active light/dark site theme. */
-  --accent-bright: var(--terracotta-bright);
+  --accent-bright: var(--azure-bright);
 }
 
 :root,
 :root[data-theme='light'] {
-  --bg: #faf5ef;
+  --bg: #f7f9fc;
   --surface: #ffffff;
-  --surface-muted: #f5f0ea;
-  --text: #2e2635;
-  --text-muted: #6b6276;
-  --border: rgba(46, 38, 53, 0.12);
+  --surface-muted: #eef2f8;
+  --text: #0f172a;
+  --text-muted: #56637a;
+  --border: rgba(15, 23, 42, 0.1);
 
-  --accent: var(--terracotta-deep);
-  --accent-hover: var(--terracotta-mid);
+  --accent: var(--azure-deep);
+  --accent-hover: var(--azure-mid);
   --accent-contrast: #ffffff;
   --danger: #b3261e;
   --success: #1e7b34;
 
-  --shadow-sm: 0 1px 2px rgba(46, 38, 53, 0.05);
-  --shadow-md: 0 4px 12px rgba(46, 38, 53, 0.1);
-  --shadow-lg: 0 10px 25px rgba(46, 38, 53, 0.15);
-  --shadow-glow: 0 10px 32px rgba(194, 65, 31, 0.3);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.15);
+  --shadow-glow: 0 10px 32px rgba(29, 78, 216, 0.28);
 
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-  --bg: #18141f;
-  --surface: #221c2d;
-  --surface-muted: #1d1826;
-  --text: #ece7f2;
-  --text-muted: #a89fb8;
-  --border: rgba(236, 231, 242, 0.12);
+  --bg: #0b0f1a;
+  --surface: #131a2b;
+  --surface-muted: #0f1420;
+  --text: #e7ecf7;
+  --text-muted: #9aa6c0;
+  --border: rgba(231, 236, 247, 0.12);
 
-  --accent: var(--terracotta-bright);
-  --accent-hover: var(--terracotta-pale);
+  --accent: var(--azure-bright);
+  --accent-hover: var(--azure-pale);
   --accent-contrast: var(--ink);
   --danger: #ff8a80;
   --success: #8bc07a;
@@ -83,21 +83,21 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 10px 32px rgba(232, 131, 95, 0.32);
+  --shadow-glow: 0 10px 32px rgba(91, 142, 245, 0.32);
 
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --bg: #18141f;
-    --surface: #221c2d;
-    --surface-muted: #1d1826;
-    --text: #ece7f2;
-    --text-muted: #a89fb8;
-    --border: rgba(236, 231, 242, 0.12);
-    --accent: var(--terracotta-bright);
-    --accent-hover: var(--terracotta-pale);
+    --bg: #0b0f1a;
+    --surface: #131a2b;
+    --surface-muted: #0f1420;
+    --text: #e7ecf7;
+    --text-muted: #9aa6c0;
+    --border: rgba(231, 236, 247, 0.12);
+    --accent: var(--azure-bright);
+    --accent-hover: var(--azure-pale);
     --accent-contrast: var(--ink);
     color-scheme: dark;
   }
